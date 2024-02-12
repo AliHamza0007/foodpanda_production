@@ -1,7 +1,7 @@
 # FoodPanda React Clone
 
 This is a clone project of FoodPanda, implemented using React.js. You can access the live version of the project
-[here](https://foodpanda-xo5w.onrender.com/).
+[here](https://foodpanda-x2xs.onrender.com).
 
 ## Features
 
