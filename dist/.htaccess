@@ -1,13 +1,11 @@
+<IfModule mod_rewrite.c>
 
-This .htaccess file worked for me. In my situation, I cloned the entire Git repository of a React project, not just the 'build' folder.
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
 
-Options -MultiViews
-RewriteEngine On
-
-# Serve files from the "static" directory directly
-RewriteCond %{REQUEST_URI} ^/static/
-RewriteRule ^static/(.*)$ build/static/$1 [L]
-
-# Handle client-side routing
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ build/index.html [QSA,L]
+</IfModule>
